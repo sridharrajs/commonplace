@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.language or 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ site.title or 'Commonplace' }}{% endblock %}</title>
+    {% if site.description %}
+    <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+    {% if site.repo_url %}
+    <div class="fork-ribbon-corner">
+        <a class="fork-ribbon" href="{{ site.repo_url }}">Fork me on GitHub</a>
+    </div>
+    {% endif %}
+    <header class="site-header">
+        <a class="site-title" href="{{ root }}">{{ site.title or 'Commonplace' }}</a>
+        <nav aria-label="Categories">
+            {% for c in categories %}
+            <a href="{{ root }}category/{{ c.slug }}/"{% if label == "Category" and group.slug == c.slug %} aria-current="page"{% endif %}>{{ c.name }}</a>
+            {% endfor %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

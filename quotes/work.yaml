@@ -1,0 +1,7 @@
+# One file per category: the file name is the category (work.yaml → "Work").
+# Each quote needs `text`; `author`, `source` and `tags` are optional.
+# Use `text: |` for multi-line quotes to keep the line breaks.
+
+- text: The secret of getting ahead is getting started.
+  author: Mark Twain
+  tags: [starting]

@@ -1,0 +1,21 @@
+{% macro quote_card(q, root, show_category=true) %}
+<figure class="quote" id="{{ q.id }}">
+    <blockquote>{{ q.text }}</blockquote>
+    <figcaption>
+        {% if q.author %}
+        <a class="author" href="{{ root }}author/{{ q.author_slug }}/">{{ q.author }}</a>
+        {% else %}
+        <span class="author">Unknown</span>
+        {% endif %}
+        {% if q.source %}<cite>{{ q.source }}</cite>{% endif %}
+    </figcaption>
+    <p class="tags">
+        {% if show_category %}
+        <a class="tag tag-category" href="{{ root }}category/{{ q.category_slug }}/">{{ q.category }}</a>
+        {% endif %}
+        {% for t in q.tags %}
+        <a class="tag" href="{{ root }}tag/{{ t.slug }}/">#{{ t.name }}</a>
+        {% endfor %}
+    </p>
+</figure>
+{% endmacro %}

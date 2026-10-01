@@ -1,0 +1,351 @@
+:root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1f1d1a;
+    --muted: #6b665e;
+    --border: #e6e1d8;
+    --accent: #9a3b1f;
+    --tag-bg: #f2eee6;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #161513;
+        --surface: #1e1c1a;
+        --text: #ece8e1;
+        --muted: #a39d93;
+        --border: #34312d;
+        --accent: #e0896a;
+        --tag-bg: #2a2724;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.55;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+}
+
+.site-header,
+main,
+.site-footer {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.site-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.site-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1.25rem;
+    font-size: 0.95rem;
+}
+
+.site-header nav a {
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    color: var(--text);
+}
+
+.site-header nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
+.lede {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+}
+
+.counts,
+.eyebrow,
+.count {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.counts {
+    margin: 0 0 2rem;
+}
+
+.eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+}
+
+h1,
+h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.25rem 0;
+}
+
+.category h2 {
+    font-size: 1.35rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.category h2 a {
+    text-decoration: none;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.categories a {
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quote {
+    margin: 0 0 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.quote blockquote {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.quote figcaption {
+    margin-top: 0.75rem;
+    color: var(--muted);
+}
+
+.quote figcaption::before {
+    content: "— ";
+}
+
+.quote .author {
+    font-weight: 600;
+}
+
+.quote cite::before {
+    content: ", ";
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+}
+
+.tags:empty {
+    display: none;
+}
+
+.tag {
+    padding: 0.1rem 0.55rem;
+    background: var(--tag-bg);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.tag-category {
+    color: var(--accent);
+}
+
+.random {
+    margin-bottom: 2rem;
+}
+
+.random-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.random h2 {
+    font-size: 1rem;
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+}
+
+.random .quote {
+    border-color: var(--accent);
+}
+
+button {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+.terms {
+    list-style: none;
+    padding: 0;
+    columns: 2 14rem;
+}
+
+.terms li {
+    padding: 0.3rem 0;
+    break-inside: avoid;
+}
+
+.site-footer {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.site-footer p {
+    margin: 0.5rem 0 0;
+}
+
+.index-section {
+    margin-bottom: 2.5rem;
+}
+
+.index-section h2 {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.tag-cloud .tag {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.65rem;
+    color: var(--text);
+}
+
+.tag-cloud .count {
+    font-size: 0.8rem;
+}
+
+.eyebrow a {
+    color: inherit;
+}
+
+.eyebrow a::before {
+    content: "← ";
+}
+
+/* "Fork me on GitHub" corner ribbon, shown when config.yaml has repo_url. */
+.fork-ribbon-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.fork-ribbon {
+    position: absolute;
+    top: 36px;
+    right: -50px;
+    width: 210px;
+    padding: 0.35rem 0;
+    transform: rotate(45deg);
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+    pointer-events: auto;
+}
+
+.fork-ribbon:hover {
+    color: var(--bg);
+    filter: brightness(1.1);
+}
+
+/* On narrow screens the ribbon would cover the nav; the footer link is still there. */
+@media (max-width: 60rem) {
+    .fork-ribbon-corner {
+        display: none;
+    }
+}

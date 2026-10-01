@@ -1,0 +1,10 @@
+# Site settings. Edit these after forking.
+title: Sridhar's Commonplace Book
+description: Quotes I keep coming back to, on money, work, health and life.
+# Order of categories in the nav bar and on the home page (file names in quotes/, without .yaml).
+# Categories not listed here come after these, alphabetically.
+categories: [money, work, health, life]
+owner: Sridhar
+language: en
+# Shown as a "Fork this commonplace book" link in the footer. Remove to hide it.
+repo_url: https://github.com/sridharrajs/commonplace

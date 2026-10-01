@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "_macros.html" import quote_card %}
+
+{% block content %}
+<section class="intro">
+    {% if site.description %}<p class="lede">{{ site.description }}</p>{% endif %}
+    <p class="counts">
+        {{ quotes|length }} quotes ·
+        <a href="#tags">{{ tags|length }} tags</a> ·
+        <a href="#authors">{{ authors|length }} authors</a>
+    </p>
+</section>
+
+<section class="random" hidden>
+    <div class="random-head">
+        <h2>Random quote</h2>
+        <button type="button" id="shuffle">Another one</button>
+    </div>
+    <div id="random-slot"></div>
+</section>
+
+<section class="index-section" id="categories">
+    <h2>Categories</h2>
+    <nav class="categories" aria-label="Categories">
+        {% for c in categories %}
+        <a href="{{ root }}category/{{ c.slug }}/">{{ c.name }} <span class="count">{{ c.quotes|length }}</span></a>
+        {% endfor %}
+    </nav>
+</section>
+
+<section class="index-section" id="tags">
+    <h2>Tags</h2>
+    <p class="tag-cloud">
+        {% for t in tags %}
+        <a class="tag" href="{{ root }}tag/{{ t.slug }}/">#{{ t.name }} <span class="count">{{ t.quotes|length }}</span></a>
+        {% endfor %}
+    </p>
+</section>
+
+<section class="index-section" id="authors">
+    <h2>Authors</h2>
+    <ul class="terms">
+        {% for a in authors %}
+        <li>
+            <a href="{{ root }}author/{{ a.slug }}/">{{ a.name }}</a>
+            <span class="count">{{ a.quotes|length }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{# Every quote, unrendered, for random.js to pick from. #}
+<template id="quote-pool">
+    {% for q in quotes %}
+    {{ quote_card(q, root) }}
+    {% endfor %}
+</template>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ root }}static/random.js"></script>
+{% endblock %}
