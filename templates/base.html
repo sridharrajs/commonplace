@@ -26,15 +26,16 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-    {% if site.about_url or site.repo_url %}
     <footer class="site-footer">
         <p>
-            {% if site.about_url %}<a href="{{ site.about_url }}">Why I built this</a>{% endif %}
-            {% if site.about_url and site.repo_url %} · {% endif %}
-            {% if site.repo_url %}<a href="{{ site.repo_url }}">Fork this commonplace book</a>{% endif %}
+            {{ stats.quotes }} quotes ·
+            <a href="{{ root }}tag/">{{ stats.tags }} tags</a> ·
+            <a href="{{ root }}author/">{{ stats.authors }} authors</a>
         </p>
+        {% if site.about_url %}
+        <p><a href="{{ site.about_url }}">Why I built this</a></p>
+        {% endif %}
     </footer>
-    {% endif %}
     {% block scripts %}{% endblock %}
 </body>
 </html>

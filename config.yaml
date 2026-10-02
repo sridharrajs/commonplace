@@ -1,5 +1,6 @@
 # Site settings. Edit these after forking.
 title: Sridhar's Commonplace Book
+# Used for search engines and link previews; not shown on the page.
 description: Quotes I keep coming back to, on money, work, health and life.
 # Order of categories in the nav bar and on the home page (file names in quotes/, without .yaml).
 # Categories not listed here come after these, alphabetically.
@@ -8,5 +9,5 @@ owner: Sridhar
 language: en
 # Shown as a "Why I built this" link in the footer. Remove to hide it.
 about_url: https://sridhar.co/weekly-updates/commonplace
-# Shown as a "Fork this commonplace book" link in the footer. Remove to hide it.
+# Shown as a "Fork me on GitHub" ribbon in the top corner. Remove to hide it.
 repo_url: https://github.com/sridharrajs/commonplace

@@ -134,6 +134,7 @@ def build():
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=select_autoescape(), trim_blocks=True, lstrip_blocks=True)
     env.globals["site"] = config
     env.globals["categories"] = categories  # for the header nav on every page
+    env.globals["stats"] = {"quotes": len(quotes), "tags": len(tags), "authors": len(authors)}  # for the footer
     # Changes whenever style.css does, so browsers fetch the new stylesheet instead of a cached one.
     env.globals["css_version"] = hashlib.sha256((STATIC_DIR / "style.css").read_bytes()).hexdigest()[:8]
 

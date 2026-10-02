@@ -2,15 +2,6 @@
 {% from "_macros.html" import quote_card, tag_cloud, author_list %}
 
 {% block content %}
-<section class="intro">
-    {% if site.description %}<p class="lede">{{ site.description }}</p>{% endif %}
-    <p class="counts">
-        {{ quotes|length }} quotes ·
-        <a href="{{ root }}tag/">{{ tags|length }} tags</a> ·
-        <a href="{{ root }}author/">{{ authors|length }} authors</a>
-    </p>
-</section>
-
 <section class="random" hidden>
     <div class="random-head">
         <h2>Random quote</h2>

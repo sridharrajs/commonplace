@@ -93,12 +93,6 @@ main,
     text-underline-offset: 0.3em;
 }
 
-.lede {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    margin: 0 0 0.25rem;
-}
-
 .counts,
 .eyebrow,
 .count {
@@ -268,6 +262,7 @@ button:hover {
     margin-top: 2rem;
     color: var(--muted);
     font-size: 0.85rem;
+    text-align: center;
 }
 
 .site-footer p {
@@ -343,7 +338,7 @@ button:hover {
     filter: brightness(1.1);
 }
 
-/* On narrow screens the ribbon would cover the nav; the footer link is still there. */
+/* On narrow screens the ribbon would cover the nav, so it is hidden there. */
 @media (max-width: 60rem) {
     .fork-ribbon-corner {
         display: none;
