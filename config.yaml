@@ -6,5 +6,7 @@ description: Quotes I keep coming back to, on money, work, health and life.
 categories: [money, work, health, life]
 owner: Sridhar
 language: en
+# Shown as a "Why I built this" link in the footer. Remove to hide it.
+about_url: https://sridhar.co/weekly-updates/commonplace
 # Shown as a "Fork this commonplace book" link in the footer. Remove to hide it.
 repo_url: https://github.com/sridharrajs/commonplace

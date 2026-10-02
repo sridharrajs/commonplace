@@ -26,6 +26,15 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+    {% if site.about_url or site.repo_url %}
+    <footer class="site-footer">
+        <p>
+            {% if site.about_url %}<a href="{{ site.about_url }}">Why I built this</a>{% endif %}
+            {% if site.about_url and site.repo_url %} · {% endif %}
+            {% if site.repo_url %}<a href="{{ site.repo_url }}">Fork this commonplace book</a>{% endif %}
+        </p>
+    </footer>
+    {% endif %}
     {% block scripts %}{% endblock %}
 </body>
 </html>
