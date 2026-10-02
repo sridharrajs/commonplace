@@ -3,6 +3,7 @@
 
 import argparse
 import functools
+import hashlib
 import http.server
 import json
 import re
@@ -20,6 +21,7 @@ STATIC_DIR = ROOT / "static"
 OUT_DIR = ROOT / "_site"
 
 ALLOWED_FIELDS = {"text", "author", "source", "tags"}
+HOME_LIMIT = 10  # tags and authors shown on the home page; the rest are on tag/ and author/
 
 
 class BuildError(Exception):
@@ -93,6 +95,11 @@ def group(quotes, keys):
     return sorted(groups.values(), key=lambda g: g["name"].lower())
 
 
+def most_quoted(groups, limit):
+    """The `limit` groups with the most quotes, ties broken by name."""
+    return sorted(groups, key=lambda g: (-len(g["quotes"]), g["name"].lower()))[:limit]
+
+
 def order_categories(categories, order):
     """Put categories in the order given in config.yaml; unlisted ones follow alphabetically."""
     slugs = [slugify(str(name)) for name in order or []]
@@ -127,8 +134,15 @@ def build():
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=select_autoescape(), trim_blocks=True, lstrip_blocks=True)
     env.globals["site"] = config
     env.globals["categories"] = categories  # for the header nav on every page
+    # Changes whenever style.css does, so browsers fetch the new stylesheet instead of a cached one.
+    env.globals["css_version"] = hashlib.sha256((STATIC_DIR / "style.css").read_bytes()).hexdigest()[:8]
 
-    render(env, "home.html", "index.html", quotes=quotes, categories=categories, authors=authors, tags=tags)
+    render(
+        env, "home.html", "index.html", quotes=quotes, categories=categories, authors=authors, tags=tags,
+        top_authors=most_quoted(authors, HOME_LIMIT), top_tags=most_quoted(tags, HOME_LIMIT),
+    )
+    render(env, "terms.html", "tag/index.html", label="Tag", groups=tags)
+    render(env, "terms.html", "author/index.html", label="Author", groups=authors)
     for kind, label, groups in (("category", "Category", categories), ("author", "Author", authors), ("tag", "Tag", tags)):
         for g in groups:
             render(env, "group.html", f"{kind}/{g['slug']}/index.html", label=label, group=g)

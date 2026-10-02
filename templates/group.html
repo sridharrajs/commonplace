@@ -8,7 +8,7 @@
     {% if label == "Category" %}
     <p class="eyebrow">{{ label }}</p>
     {% else %}
-    <p class="eyebrow"><a href="{{ root }}#{{ label|lower }}s">All {{ label|lower }}s</a></p>
+    <p class="eyebrow"><a href="{{ root }}{{ label|lower }}/">All {{ label|lower }}s</a></p>
     {% endif %}
     <h1>{% if label == "Tag" %}#{% endif %}{{ group.name }}</h1>
     <p class="counts">{{ group.quotes|length }} quote{{ "s" if group.quotes|length != 1 }}</p>

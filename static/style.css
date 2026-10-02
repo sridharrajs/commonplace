@@ -253,7 +253,7 @@ button:hover {
 .terms {
     list-style: none;
     padding: 0;
-    columns: 2 14rem;
+    columns: 3 12rem;
 }
 
 .terms li {
@@ -348,4 +348,9 @@ button:hover {
     .fork-ribbon-corner {
         display: none;
     }
+}
+
+.see-all {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
 }

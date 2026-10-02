@@ -7,7 +7,7 @@
     {% if site.description %}
     <meta name="description" content="{{ site.description }}">
     {% endif %}
-    <link rel="stylesheet" href="{{ root }}static/style.css">
+    <link rel="stylesheet" href="{{ root }}static/style.css?v={{ css_version }}">
 </head>
 <body>
     {% if site.repo_url %}

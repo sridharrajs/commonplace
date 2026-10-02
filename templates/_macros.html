@@ -19,3 +19,22 @@
     </p>
 </figure>
 {% endmacro %}
+
+{% macro tag_cloud(tags, root) %}
+<p class="tag-cloud">
+    {% for t in tags %}
+    <a class="tag" href="{{ root }}tag/{{ t.slug }}/">#{{ t.name }} <span class="count">{{ t.quotes|length }}</span></a>
+    {% endfor %}
+</p>
+{% endmacro %}
+
+{% macro author_list(authors, root) %}
+<ul class="terms">
+    {% for a in authors %}
+    <li>
+        <a href="{{ root }}author/{{ a.slug }}/">{{ a.name }}</a>
+        <span class="count">{{ a.quotes|length }}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
