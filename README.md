@@ -71,7 +71,8 @@ Watch out for the `#` truncation in particular: it doesn't cause an error, so ch
 
 ## What gets built
 
-- `/` — a random quote, then an index of every category, tag and author with quote counts
+- `/` — a random quote, every category, and the 10 tags and authors with the most quotes
+- `/tag/`, `/author/` — every tag and every author, with quote counts
 - `/category/<name>/`, `/author/<name>/`, `/tag/<name>/` — one page each
 - `/quotes.json` — all quotes as JSON, for reuse elsewhere
 
@@ -84,4 +85,4 @@ pip install -r requirements.txt
 python build.py --serve     # builds into _site/ and serves http://127.0.0.1:8000
 ```
 
-To change the look, edit `templates/` (Jinja2) and `static/style.css`.
+To change the look, edit `templates/` (Jinja2) and `static/style.css`. To show more or fewer tags and authors on the home page, change `HOME_LIMIT` in `build.py`.
