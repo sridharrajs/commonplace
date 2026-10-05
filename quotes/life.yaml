@@ -20,7 +20,7 @@
 
 - text: The purpose of life is not to be happy, it is to be useful.
   author: Ralph Waldo Emerson
-  tags: [happiness]
+  tags: [purpose, happiness]
 
 - text: |
     Go into the arts. I'm not kidding.
@@ -50,7 +50,7 @@
     What we do with this hour, and that one, is what we are doing.
     A schedule defends from chaos and whim. It is a net for catching days.
   author: Annie Dillard
-  tags: [schedule]
+  tags: [schedule, productivity]
 
 - text: |
     Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty.
@@ -69,7 +69,7 @@
 
 - text: "The happiness of your life depends upon the quality of your thoughts: therefore, guard accordingly, and take care that you entertain no notions unsuitable to virtue and reasonable nature."
   author: Marcus Aurelius
-  tags: [happiness]
+  tags: [happiness, virtue]
 
 - text: Keep this thought at the ready at daybreak, and through the day and night—there is only one path to happiness, and that is in giving up all outside of your sphere of choice, regarding nothing else as your possession.
   author: Epictetus
@@ -115,7 +115,7 @@
     Instead, use the other—that he is your brother, that you were raised together,
     and then you will have hold of the handle that carries.
   author: Epictetus
-  tags: [parenting, emotions]
+  tags: [parenting, relationships]
 
 - text: |
     Anger always outlasts hurt.
@@ -128,13 +128,13 @@
     These things are not asking to be judged by you.
     Leave them alone.
   author: Marcus Aurelius
-  tags: [parenting, emotions]
+  tags: [emotions]
 
 - text: |
     Old people are always very impatient with young ones.
     Fathers always expect their sons to have their virtues without their faults.
   author: Winston Churchill
-  tags: [parenting, emotions]
+  tags: [parenting, virtue]
 
 - text: Character is fate.
   author: Heraclitus
@@ -142,22 +142,22 @@
 
 - text: If, at some point in your life, you should come across anything better than justice, truth, self-control, courage — it must be an extraordinary thing indeed — and enjoy it to the full.
   author: Marcus Aurelius
-  tags: [parenting, character]
+  tags: [character]
 
 - text: The most important decision you make is to be in a good mood.
   author: Voltaire
-  tags: [parenting, self-care]
+  tags: [self-care]
 
 - text: Keep company only with people who uplift you, whose presence calls forth your best.
   author: Epictetus
-  tags: [parenting, self-care, relationships]
+  tags: [relationships]
 
 - text: |
     A reader lives a thousand lives before he dies.
     The man who never reads lives only one.
   author: George R.R. Martin
-  tags: [parenting, reading]
+  tags: [reading]
 
 - text: I would rather have questions that can't be answered than answers that can't be questioned.
   author: Richard Feynman
-  tags: [parenting, reading, curiosity]
+  tags: [curiosity]

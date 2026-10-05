@@ -4,6 +4,7 @@
 
 - text: The most brilliant financial strategy consists of living well within one’s means.
   author: Benjamin Graham
+  tags: [living below means]
 
 - text: |
     Money is more like a vaccine than a performance-enhancing drug.
@@ -13,7 +14,7 @@
 
 - text: Patience is a virtue. Virtues are no fun. Train yourself to be patient and you'll never need to worry about having a lot of competition.
   author: Jason Zweig
-  tags: [patience]
+  tags: [patience, virtue]
 
 - text: A lot of people with high IQs are terrible investors because they’ve got terrible temperaments.
   author: Charlie Munger
