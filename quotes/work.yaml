@@ -12,7 +12,10 @@
   author: Aaron Swartz
   tags: [curiosity]
 
-- text: In my whole life, I have known no wise people (over a broad subject matter area) who didn’t read all the time—none. Zero.
+- text: |
+    In my whole life, I have known no wise people who didn’t read all the time - none, zero.
+    You’d be amazed at how much Warren reads - at how much I read.
+    They think I’m a book with a couple of legs sticking out.
   author: Charlie Munger
   tags: [reading]
 
@@ -147,3 +150,39 @@
     He is doing us a favour by giving us an opportunity to do so.
   author: Mahatma Gandhi
   tags: [customers]
+
+- text: |
+    Develop into a lifelong self-learner through voracious reading;
+    cultivate curiosity and strive to become a little wiser every day.
+  author: Charlie Munger
+  tags: [learning, reading, curiosity]
+
+- text: |
+    Spend each day trying to be a little wiser than you were when you woke up.
+    Day by day, and at the end of the day - if you live long enough - like most people,
+    you will get out of life what you deserve.
+  author: Charlie Munger
+  tags: [learning, wisdom]
+
+- text: |
+    I constantly see people rise in life who are not the smartest, but they are learning machines.
+    They go to bed every night a little wiser than they were when they got up and boy does that help, particularly when you have a long run ahead of you.
+  author: Charlie Munger
+  tags: [learning, wisdom]
+
+- text: |
+    Read 500 pages every day. That’s how knowledge works.
+    It builds up, like compound interest.
+    All of you can do it, but I guarantee not many of you will do it.
+  author: Warren Buffett
+  tags: [reading, learning]
+
+- text: If [more] information was the answer, then we’d all be billionaires with perfect abs.
+  author: Derek Sivers
+  tags: [productivity, procrastination]
+
+- text: |
+    Lucky opportunities tend to be stumbled upon, not handed out.
+    Opportunity comes to the prepared mind.
+  author: Charlie Munger
+  tags: [preparedness, luck]
