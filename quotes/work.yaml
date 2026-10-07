@@ -246,3 +246,19 @@
 - text: The best thing a human being can do is to help another human being know more.
   author: Charlie Munger
   tags: [learning, teaching]
+
+- text: Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
+  author: Scott Adams
+  tags: [creativity, art]
+
+- text: |
+    There is no end to education.
+    It is not that you read a book, pass an examination, and finish with education.
+    The whole of life, from the moment you are born to the moment you die, is a process of learning.
+  author: Jiddu Krishnamurti
+  source: Krishnamurti on Education
+  tags: [learning]
+
+- text: Motivation is what gets you started. Habit is what keeps you going.
+  author: Jim Ryun
+  tags: [habits, starting]
