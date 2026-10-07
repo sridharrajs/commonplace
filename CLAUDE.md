@@ -18,6 +18,10 @@ python build.py --serve [--port N]   # build, then serve http://127.0.0.1:8000
 
 The build is the only check: it exits non-zero with `error: <file>, quote #N: ...` on invalid YAML, a quote missing `text`, or any field outside `ALLOWED_FIELDS` (`text`, `author`, `source`, `tags`). After changing quotes or templates, run `python build.py` to confirm it still builds.
 
+## Adding quotes
+
+After every addition, run `python build.py`, then list the added quotes as a table (quote, author, source, category, tags) for review. Don't commit changes to `quotes/*.yaml` until the user approves.
+
 ## Architecture
 
 Everything happens in `build.py` in one pass: `load_quotes()` → `group()` → `render()`.
