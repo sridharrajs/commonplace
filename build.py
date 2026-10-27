@@ -8,7 +8,9 @@ import http.server
 import json
 import re
 import shutil
+import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -110,6 +112,15 @@ def order_categories(categories, order):
     return sorted(categories, key=lambda c: rank.get(c["slug"], len(rank)))
 
 
+def last_updated():
+    """Date of the latest commit, or today if git isn't available (e.g. outside a checkout)."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        return date.fromisoformat(out)
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        return date.today()
+
+
 def render(env, template, out_path, **context):
     # Relative links ("../../") let the site work at any URL, including a GitHub Pages project path.
     depth = out_path.count("/")
@@ -135,6 +146,7 @@ def build():
     env.globals["site"] = config
     env.globals["categories"] = categories  # for the header nav on every page
     env.globals["stats"] = {"quotes": len(quotes), "tags": len(tags), "authors": len(authors)}  # for the footer
+    env.globals["last_updated"] = last_updated().strftime("%d-%b-%Y")  # footer, e.g. 27-Oct-2026
     # Changes whenever style.css does, so browsers fetch the new stylesheet instead of a cached one.
     env.globals["css_version"] = hashlib.sha256((STATIC_DIR / "style.css").read_bytes()).hexdigest()[:8]
 
