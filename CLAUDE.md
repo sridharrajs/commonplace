@@ -20,7 +20,7 @@ The build is the only check: it exits non-zero with `error: <file>, quote #N: ..
 
 ## Adding quotes
 
-After every addition, run `python build.py`, then list the added quotes as a table (quote, author, source, category, tags) for review. Don't commit changes to `quotes/*.yaml` until the user approves.
+Propose before editing. List the proposed quotes as a table (quote, author, source, category, suggested tags), flag duplicates of existing quotes and doubtful attributions, and wait for the user to confirm. Don't touch `quotes/*.yaml` until they approve the table. After adding the approved quotes, run `python build.py`. Don't commit until the user approves.
 
 ## Architecture
 
